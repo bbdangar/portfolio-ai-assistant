@@ -15,6 +15,7 @@ import {
   Github,
   Link as LinkIcon,
 } from "lucide-react";
+import info from '@/data/personal-information.json'
 
 export default function Home() {
   return (
@@ -24,7 +25,7 @@ export default function Home() {
         <div className="mx-auto max-w-6xl px-6 py-4">
           <div className="flex items-center justify-between">
             <h1 className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-2xl font-bold text-transparent">
-              Bhagirath Dangar
+              { info.name }
             </h1>
             <nav className="hidden gap-4 md:flex">
               <a
@@ -74,34 +75,32 @@ export default function Home() {
         </div>
       </header>
 
-      {/* Hero */}
       <section className="mx-auto max-w-6xl px-6 py-16">
         <div className="text-center">
           <div className="mx-auto mb-6 flex h-32 w-32 items-center justify-center rounded-full bg-gradient-to-br from-blue-600 to-purple-600 text-4xl font-bold text-white">
-            BD
+            { info.initials }
           </div>
           <h2 className="mb-4 text-4xl font-bold text-gray-800 md:text-5xl">
-            Bhagirath Dangar
+            { info.name }
           </h2>
           <p className="mb-8 text-xl text-gray-600">
-            Full Stack &amp; AI Engineer | Laravel • Angular • Vue • React | Android
-            • React Native • Ionic
+            { info.tagline }
           </p>
           <div className="flex flex-wrap justify-center gap-4 text-gray-600">
             <a
-              href="mailto:bbdangar.36@gmail.com"
+              href={"mailto:" + info.email}
               className="flex items-center gap-2 transition-colors hover:text-blue-600"
             >
               <Mail className="h-4 w-4" />
-              bbdangar.36@gmail.com
+              { info.email }
             </a>
             <span className="flex items-center gap-2">
               <Phone className="h-4 w-4" />
-              +91 97268 84692
+              { info.mobile }
             </span>
             <span className="flex items-center gap-2">
               <MapPin className="h-4 w-4" />
-              Bhuj, Gujarat, India
+              { info.location }
             </span>
           </div>
         </div>
@@ -118,22 +117,14 @@ export default function Home() {
             <User className="h-6 w-6 text-blue-600" />
             About Me
           </h3>
-          <p className="mb-4 text-lg leading-relaxed text-gray-700">
-            Experienced Full Stack Developer with over 10 years of expertise in
-            Laravel, Angular, and scalable application development. Currently
-            expanding expertise into Machine Learning and Generative AI,
-            specializing in Retrieval-Augmented Generation (RAG), LLM integration,
-            and AI-driven automation.
+          { info.about.map((p, i) => (
+          <p key={i} className="mb-4 text-lg leading-relaxed text-gray-700">
+            { p }
           </p>
-          <p className="mb-4 text-lg leading-relaxed text-gray-700">
-            Combines deep backend and frontend engineering skills with modern AI
-            capabilities to deliver intelligent, production-ready solutions for
-            enterprise and startup environments.
-          </p>
+          ))}
+
           <p className="text-lg font-medium leading-relaxed text-gray-700">
-            Career Objective: Seeking to leverage 10+ years of full-stack
-            experience and new AI/ML expertise to build intelligent, data-driven
-            applications and contribute to enterprise AI initiatives.
+            Career Objective: { info.career_objective }
           </p>
         </section>
 
