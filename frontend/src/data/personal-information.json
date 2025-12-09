@@ -1,12 +1,12 @@
 {
     "name" : "Bhagirath Dangar",
     "initials" : "BD",
-    "tagline" : "Full Stack & AI Engineer | Laravel • Angular • Vue • React | Android • React Native • Ionic",
+    "tagline" : "Full Stack & AI Engineer | Laravel • Angular • Vue • React • Next.js  | Android • React Native • Ionic",
     "email": "bbdangar.36@gmail.com",
     "mobile": "+91 97268 84692",
     "location": "Bhuj, Gujart, India",
     "about": [
-        "Experienced Full Stack Developer with over 10 years of expertise in Laravel, Angular, and scalable application development. Currently expanding expertise into Machine Learning and Generative AI, specializing in Retrieval-Augmented Generation (RAG), LLM integration, and AI-driven automation.",
+        "Experienced Full Stack Developer with over 10 years of expertise in Laravel, Angular, React, Vue and scalable application development. Currently expanding expertise into Machine Learning and Generative AI, specializing in Retrieval-Augmented Generation (RAG), LLM integration, and AI-driven automation.",
         "Combines deep backend and frontend engineering skills with modern AI capabilities to deliver intelligent, production-ready solutions for enterprise and startup environments."
     ],
     "career_objective": "Seeking to leverage 10+ years of full-stack experience and new AI/ML expertise to build intelligent, data-driven applications and contribute to enterprise AI initiatives."
