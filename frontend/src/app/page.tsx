@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 import info from '@/data/personal-information.json';
 import experience from '@/data/experience.json';
+import ChatWidget from "@/components/ChatWidget";
 
 export default function Home() {
   return (
@@ -605,6 +606,9 @@ export default function Home() {
           </div>
         </section>
       </main>
+      
+      {/* Floating chat widget */}
+      <ChatWidget />
     </div>
   );
 }
