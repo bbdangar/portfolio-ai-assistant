@@ -15,7 +15,8 @@ import {
   Github,
   Link as LinkIcon,
 } from "lucide-react";
-import info from '@/data/personal-information.json'
+import info from '@/data/personal-information.json';
+import experience from '@/data/experience.json';
 
 export default function Home() {
   return (
@@ -135,141 +136,36 @@ export default function Home() {
             Experience
           </h3>
 
-          {/* Techlify Inc */}
-          <div className="rounded-2xl bg-white p-8 shadow-lg transition-shadow hover:shadow-2xl">
+          { experience.map((exp, i) => (
+          <div key={i} className="rounded-2xl bg-white p-8 shadow-lg transition-shadow hover:shadow-2xl">
             <div className="mb-4 flex flex-col md:flex-row md:items-start md:justify-between">
               <div>
                 <h4 className="text-2xl font-bold text-gray-800">
-                  Software Engineer (Remote)
+                  { exp.role } ({ exp.job_type })
                 </h4>
                 <p className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-lg font-semibold text-transparent">
-                  Techlify Inc &bull; Georgetown, Guyana
+                  { exp.company } &bull; { exp.location }
                 </p>
               </div>
               <span className="mt-2 font-medium text-gray-500 md:mt-0">
-                Feb 2021 – Sep 2025
+                { exp.duration }
               </span>
             </div>
             <p className="mb-4 text-gray-700">
-              Responsible for software development, system validation, and
-              executing project plans across multiple customer products, including
-              accounting, construction workflow, and dealership management
-              platforms.
+              { exp.details }
             </p>
-            <ul className="space-y-2 text-gray-700">
-              <li className="flex items-start gap-2">
-                <span className="mt-1 text-blue-600">▹</span>
-                Led full-stack development using Laravel (backend) and Angular
-                (frontend) for core Techlify products.
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="mt-1 text-blue-600">▹</span>
-                Designed REST APIs, implemented domain business logic, and built
-                responsive UI modules and dashboards.
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="mt-1 text-blue-600">▹</span>
-                Collaborated with cross-functional teams to ensure performance,
-                reliability, and smooth releases.
-              </li>
-            </ul>
+            { exp?.achievements && exp?.achievements?.length > 0 && (
+              <ul className="space-y-2 text-gray-700">
+                { exp.achievements.map((achievement, i) => (
+                <li key={i} className="flex items-start gap-2">
+                  <span className="mt-1 text-blue-600">▹</span>
+                  { achievement }
+                </li>
+                ))}
+              </ul>
+            )}
           </div>
-
-          {/* Bluebox InfoSoft */}
-          <div className="rounded-2xl bg-white p-8 shadow-lg transition-shadow hover:shadow-2xl">
-            <div className="mb-4 flex flex-col md:flex-row md:items-start md:justify-between">
-              <div>
-                <h4 className="text-2xl font-bold text-gray-800">
-                  Senior Mobile App Developer (Remote)
-                </h4>
-                <p className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-lg font-semibold text-transparent">
-                  Bluebox InfoSoft Pvt Ltd &bull; Vadodara, India
-                </p>
-              </div>
-              <span className="mt-2 font-medium text-gray-500 md:mt-0">
-                July 2020 – Feb 2021
-              </span>
-            </div>
-            <p className="mb-4 text-gray-700">
-              Led Android mobile development for multiple client projects,
-              focusing on performance and maintainable codebases.
-            </p>
-            <ul className="space-y-2 text-gray-700">
-              <li className="flex items-start gap-2">
-                <span className="mt-1 text-blue-600">▹</span>
-                Built and maintained production Android apps and cross-platform
-                apps.
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="mt-1 text-blue-600">▹</span>
-                Integrated REST APIs, push notifications, offline caching, and
-                analytics.
-              </li>
-            </ul>
-          </div>
-
-          {/* Self Employed */}
-          <div className="rounded-2xl bg-white p-8 shadow-lg transition-shadow hover:shadow-2xl">
-            <div className="mb-4 flex flex-col md:flex-row md:items-start md:justify-between">
-              <div>
-                <h4 className="text-2xl font-bold text-gray-800">
-                  Web &amp; Mobile App Developer
-                </h4>
-                <p className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-lg font-semibold text-transparent">
-                  Self-Employed
-                </p>
-              </div>
-              <span className="mt-2 font-medium text-gray-500 md:mt-0">
-                April 2019 – July 2020
-              </span>
-            </div>
-            <p className="mb-4 text-gray-700">
-              Delivered custom applications for various clients, handling
-              requirements, development, and deployment end-to-end.
-            </p>
-          </div>
-
-          {/* Make In Kutch */}
-          <div className="rounded-2xl bg-white p-8 shadow-lg transition-shadow hover:shadow-2xl">
-            <div className="mb-4 flex flex-col md:flex-row md:items-start md:justify-between">
-              <div>
-                <h4 className="text-2xl font-bold text-gray-800">
-                  Web &amp; Mobile App Developer
-                </h4>
-                <p className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-lg font-semibold text-transparent">
-                  Make In Kutch &bull; Bhuj, India
-                </p>
-              </div>
-              <span className="mt-2 font-medium text-gray-500 md:mt-0">
-                May 2017 – April 2019
-              </span>
-            </div>
-            <p className="mb-4 text-gray-700">
-              Developed web and mobile solutions for local businesses, focusing
-              on usability and fast delivery.
-            </p>
-          </div>
-
-          {/* Romin Interactive */}
-          <div className="rounded-2xl bg-white p-8 shadow-lg transition-shadow hover:shadow-2xl">
-            <div className="mb-4 flex flex-col md:flex-row md:items-start md:justify-between">
-              <div>
-                <h4 className="text-2xl font-bold text-gray-800">
-                  Web &amp; Mobile App Developer
-                </h4>
-                <p className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-lg font-semibold text-transparent">
-                  Romin Interactive &bull; Bhuj, India
-                </p>
-              </div>
-              <span className="mt-2 font-medium text-gray-500 md:mt-0">
-                March 2014 – May 2017
-              </span>
-            </div>
-            <p className="mb-4 text-gray-700">
-              Built and maintained numerous web and mobile apps, gaining strong
-              foundations in full stack development.
-            </p>
-          </div>
+          ))}
         </section>
 
         {/* Skills */}
