@@ -1,0 +1,51 @@
+[
+    {
+        "role": "Software Engineer",
+        "company": "Techlify Inc",
+        "location": "Georgetown, Guyana",
+        "job_type": "Remote",
+        "duration": "Feb 2021 - Sep 2025",
+        "details": "Responsible for software development, system validation, and executing project plans across multiple customer products, including accounting, construction workflow, and dealership management platforms.",
+        "achievements": [
+            "Led full-stack development using Laravel (backend) and Angular (frontend) for core Techlify products.",
+            "Designed REST APIs, implemented domain business logic, and built responsive UI modules and dashboards.",
+            "Collaborated with cross-functional teams to ensure performance, reliability, and smooth releases."
+        ]
+    },
+    {
+        "role": "Senior Mobile App Developer",
+        "company": "Bluebox InfoSoft Pvt Ltd",
+        "location": "Vadodara, India",
+        "job_type": "Remote",
+        "duration": "July 2020 – Feb 2021",
+        "details": "Led Android mobile development for multiple client projects, focusing on performance and maintainable codebases.",
+        "achievements": [
+            "Built and maintained production Android apps and cross-platform apps.",
+            "Integrated REST APIs, push notifications, offline caching, and analytics."
+        ]
+    },
+    {
+        "role": "Web & Mobile App Developer",
+        "company": "Self-Employed",
+        "location": "Bhuj, Guyana",
+        "job_type": "WFH",
+        "duration": "April 2019 – July 2020",
+        "details": "Delivered custom applications for various clients, handling requirements, development, and deployment end-to-end."
+    },
+    {
+        "role": "Web & Mobile App Developer",
+        "company": "Make In Kutch",
+        "location": "Bhuj, India",
+        "job_type": "On-Site",
+        "duration": "May 2017 – April 2019",
+        "details": "Developed web and mobile solutions for local businesses, focusing on usability and fast delivery."
+    },
+    {
+        "role": "Web & Mobile App Developer",
+        "company": "Romin Interactive",
+        "location": "Bhuj, India",
+        "job_type": "On-Site",
+        "duration": "March 2014 – May 2017",
+        "details": "Built and maintained numerous web and mobile apps, gaining strong foundations in full stack development."
+    }
+]

@@ -1,24 +1,46 @@
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from .routers import chat
+
+from app.routers import chat
+from app.services.ingest import ingest
+from app.config import VECTORSTORE_DIR
 
 app = FastAPI(
-    title="Portfolio AI Assinstant Backend",
+    title="Portfolio AI Assistant Backend",
     version="0.1.0",
 )
 
-# CORS settings
+# ----------------------------
+# Startup hook (CRITICAL)
+# ----------------------------
+@app.on_event("startup")
+async def startup_event():
+    if not VECTORSTORE_DIR.exists():
+        print("🔄 Vector store not found. Running ingestion...")
+        ingest()
+    else:
+        print("✅ Vector store found. Skipping ingestion.")
+
+# ----------------------------
+# CORS
+# ----------------------------
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Adjust this in production for security
+    allow_origins=["*"],  # OK for portfolio
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-# Include routers
+# ----------------------------
+# Routers
+# ----------------------------
 app.include_router(chat.router)
 
+# ----------------------------
+# Health Check
+# ----------------------------
 @app.get("/health")
 async def health():
     return {"status": "ok"}

@@ -1,5 +1,6 @@
 from fastapi import APIRouter
 from pydantic import BaseModel
+from app.services.qa_chain import answer_query
 
 router = APIRouter(prefix="/chat", tags=["chat"])
 
@@ -10,10 +11,6 @@ class ChatResponse(BaseModel):
     reply: str
 
 @router.post("/", response_model=ChatResponse)
-async def chat(request: ChatRequest):
-    return ChatResponse(
-        reply=(
-            "Hi! I am the Portfolio AI Assistant."
-            f"I have received your message: '{request.message}'"
-        )
-    )
+async def chat(req: ChatRequest):
+    reply = answer_query(req.message)
+    return ChatResponse(reply=reply)
