@@ -16,11 +16,8 @@ app = FastAPI(
 # ----------------------------
 @app.on_event("startup")
 async def startup_event():
-    if not VECTORSTORE_DIR.exists():
-        print("🔄 Vector store not found. Running ingestion...")
-        ingest()
-    else:
-        print("✅ Vector store found. Skipping ingestion.")
+    print("🔄 Running ingestion...")
+    ingest()
 
 # ----------------------------
 # CORS
